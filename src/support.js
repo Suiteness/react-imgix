@@ -6,7 +6,6 @@ Minor syntax modifications have been made
 */
 
 var Uri = require('jsuri');
-var Base64 = require('js-base64').Base64;
 
 // @see https://www.imgix.com/docs/reference
 var PARAM_EXPANSION = Object.freeze({
@@ -135,10 +134,6 @@ function processImage(src, longOptions) {
     }
 
     key = encodeURIComponent(key);
-
-    if (key.substr(-2) === '64') {
-      val = Base64.encodeURI(val);
-    }
 
     shortOptions[key] = val;
   });
